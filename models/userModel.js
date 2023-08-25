@@ -25,15 +25,16 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "please enter your country of residence"],
     },
-
-    
-    twoFactorSecret:{ 
-     type:String   
-
-  },
-  twoFactorCodeExpires:{
-    type:Date
-  },
+    recyclingHabits: {
+      type: String,  
+      enum: ["I recycle often", "I recycle occationally", "I don't recycle at all",],
+      default: "I recycle often", 
+    },
+    signupOptions: {
+      type: String,  
+      enum: ["I'm a user", "I'm a representative of a recycling center", "I don't recycle at all"],
+      default: "I'm a user",  
+    },
   },
  
   {
